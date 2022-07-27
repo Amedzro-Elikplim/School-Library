@@ -9,14 +9,6 @@ class Person
   attr_reader :id
   attr_accessor :name, :age
 
-  def _name(name)
-    @name = name
-  end
-
-  def _age(age)
-    @age = age
-  end
-
   def of_age?
     @age >= 18
   end
