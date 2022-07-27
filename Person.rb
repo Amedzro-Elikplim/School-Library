@@ -1,10 +1,10 @@
 class Person
   #constructor
-  def initialize(name = 'Unknown', age, parent_parameters = true) 
+  def initialize(name = 'Unknown', age, parent_permission = true) 
     @id = Random.rand(1..1000)
     @name = name
     @age = age
-    @parent_parameters = parent_parameters
+    @parent_permission = parent_permission
   end
 
   #id getter
@@ -37,7 +37,7 @@ class Person
   end
 
   def can_use_services?
-     
+     true if of_age? || @parent_permission
   end
 
 end
