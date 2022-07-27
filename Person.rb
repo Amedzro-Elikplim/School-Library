@@ -1,0 +1,12 @@
+class Person
+    
+  def initialize(name = 'Unknown', age, parent_parameters = true) 
+    @id = Random.rand(1..1000)
+    @name = name
+    @age = age
+    @parent_parameters = parent_parameters
+  end
+
+  
+
+end
