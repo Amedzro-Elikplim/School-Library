@@ -3,7 +3,8 @@
 # SCHOOL LIBRARY
 
 > This a simple illustration of how to create classes, implement polymorphism and inheritance in ruby
-Additional description about the project and its features.
+
+## Additional description about the project and its features.
 ## Built With
 - ruby
 
