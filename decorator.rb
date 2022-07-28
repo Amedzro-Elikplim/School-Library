@@ -14,7 +14,7 @@ end
 
 class CapitalizeDecorator < BaseDecorator
   def correct_name
-    @nameable.correct_name.upcase
+    @nameable.correct_name.capitalize
   end
 end
 
@@ -29,4 +29,4 @@ person.correct_name
 capitalized_person = CapitalizeDecorator.new(person)
 capitalized_person.correct_name
 capitalized_trimmed_person = TrimmerDecorator.new(capitalized_person)
-capitalized_trimmed_person.correct_name
+print capitalized_trimmed_person.correct_name
