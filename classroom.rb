@@ -6,6 +6,8 @@ class Classroom
     @students = []
   end
 
+   def add_student(student)
+    @students << student
+  end
  
-
 end
