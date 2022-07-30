@@ -52,4 +52,9 @@ class App
     puts "Person created successfully \n"
   end
 
+   def list_people
+    
+    puts
+  end
+
 end
