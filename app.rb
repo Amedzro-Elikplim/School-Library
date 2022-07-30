@@ -59,4 +59,24 @@ class App
     puts
   end
 
+   def rent_book
+    print 'select a book'
+
+    @books.each_with_index do |book, index|
+      puts " [#{index}] Title: #{book.title}, Author: #{book.author} "
+    end
+    book_index = gets.chomp.to_i
+    print 'select'
+    @people.each_with_index do |person, index|
+      puts "[#{index}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+    end
+    people_index = gets.chomp.to_i
+
+    puts
+    print 'Date:'
+    date = gets.chomp
+
+    @rentals << Rental.new(date, @books[book_index], @people[people_index])
+  end
+
 end
