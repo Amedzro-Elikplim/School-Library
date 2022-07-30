@@ -79,4 +79,14 @@ class App
     @rentals << Rental.new(date, @books[book_index], @people[people_index])
   end
 
+  def list_rental
+    print "ID of person: \t"
+    identity = gets.chomp.to_i
+    find_person = @people.find { |each_person| each_person.id == identity }
+
+    find_person.rentals.each do |rental|
+      puts "Date: #{rental.date}}, Book #{rental.book.title} by Author #{rental.book.author}"
+    end
+  end
+
 end
