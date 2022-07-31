@@ -1,7 +1,7 @@
-require_relative './book'
-require_relative './student'
-require_relative './teacher'
-require_relative './rental'
+require_relative 'book'
+require_relative 'student'
+require_relative 'teacher'
+require_relative 'rental'
 
 class App
   attr_reader :books, :people, :rentals
@@ -80,12 +80,15 @@ class App
   end
 
   def list_rental
-    print "ID of person: \t"
-    identity = gets.chomp.to_i
-    find_person = @people.find { |each_person| each_person.id == identity }
+     print 'ID of person: '
+    user_id = gets.chomp.to_i
 
-    find_person.rentals.each do |rental|
-      puts "Date: #{rental.date}}, Book #{rental.book.title} by Author #{rental.book.author}"
-    end
-  end
+    puts "Rentals: #{user_id}"
+    @rentals.each do |rental|
+      if rental.person.id == user_id
+        puts "[#{rental.person.class}] Name: #{rental.person.name}
+      | Date: #{rental.date} | Book: \"#{rental.book.title}\" by #{rental.book.author}"
+      end
+   end
+end
 end
