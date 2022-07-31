@@ -11,3 +11,34 @@ def navigation
   puts '7 - Exit'
 end
 
+def menu # rubocop:disable Metrics/CyclomaticComplexity
+  app = App.new
+  loop do
+    navigation
+
+    option = gets.chomp.to_i
+
+    case option
+    when 1 then app.list_of_book
+    when 2 then app.list_people
+    when 3 then app.add_person
+    when 4 then app.add_book
+    when 5 then app.rent_book
+    when 6 then app.list_rental
+    when 7
+      puts "Thank you for using this app \n\n"
+      abort
+    else
+      puts "Invalid selection \n\n"
+    end
+  end
+end
+
+def main
+  puts
+  puts 'Welcome to the School Library App!'
+  menu
+  puts 'Thank you for using this app ;)'
+end
+
+main
