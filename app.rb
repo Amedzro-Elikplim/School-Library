@@ -80,7 +80,7 @@ class App
   end
 
   def list_rental
-     print 'ID of person: '
+    print 'ID of person: '
     user_id = gets.chomp.to_i
 
     puts "Rentals: #{user_id}"
@@ -89,6 +89,6 @@ class App
         puts "[#{rental.person.class}] Name: #{rental.person.name}
       | Date: #{rental.date} | Book: \"#{rental.book.title}\" by #{rental.book.author}"
       end
-   end
-end
+    end
+  end
 end
