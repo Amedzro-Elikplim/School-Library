@@ -6,13 +6,13 @@ require_relative './rental'
 class App
   attr_reader :books, :people, :rentals
 
-    def initialize()
-        @books = []
-        @people = []
-        @rentals = []
-    end
+  def initialize()
+    @books = []
+    @people = []
+    @rentals = []
+  end
 
-   def add_book
+  def add_book
     print 'Title:'
     title = gets.chomp
     print 'Author:'
@@ -28,7 +28,7 @@ class App
     end
   end
 
-   def add_person
+  def add_person
     puts 'Add a person'
     print 'Do you want to create a student (1) or a teacher (2)? [Input the number]: '
     person_type = gets.chomp.to_i
@@ -52,14 +52,14 @@ class App
     puts "Person created successfully \n"
   end
 
-   def list_people
+  def list_people
     @people.each do |person|
       puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
     end
     puts
   end
 
-   def rent_book
+  def rent_book
     print 'select a book'
 
     @books.each_with_index do |book, index|
@@ -88,5 +88,4 @@ class App
       puts "Date: #{rental.date}}, Book #{rental.book.title} by Author #{rental.book.author}"
     end
   end
-
 end
