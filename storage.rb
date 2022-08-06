@@ -33,3 +33,15 @@ def store_book
     File.write('books.json', JSON.generate(data))
   end
 end
+
+def load_books
+  if File.zero?('books.json')
+    puts 'No book in the file'
+  else
+    data = File.read('books.json')
+    saved_data = JSON.parse(data)
+    saved_data.each do |book|
+      puts "[Title]: #{book['title']}, [Author]: #{book['author']}"
+    end
+  end
+end
