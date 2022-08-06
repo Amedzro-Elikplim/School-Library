@@ -3,21 +3,22 @@ require './book'
 require './person'
 
 describe Rental do
- before :each do
-    @rentals = Rental.new 'Date', 'Book', 'Person'
+  it 'should have a date' do
+    person = Person.new('18', 'John', parent_permission: true)
+    rental = Rental.new('2018-01-01', Book.new('The Great Gatsby', 'F. Scott Fitzgerald'), person)
+    expect(rental.date).to eq('2018-01-01')
   end
 
-
-  describe '#date' do
-    it 'returns the correct date' do
-      @rentals.date.should eql 'Date'
-    end
+  it 'should have a book' do
+    book = Book.new('The Great Gatsby', 'F. Scott Fitzgerald')
+    rental = Rental.new('2018-01-01', book, Person.new('18', 'John', parent_permission: true))
+    expect(rental.book).to eq(book)
   end
 
-    describe '#book' do
-    it 'returns the correct book' do
-      @book.book.should eql 'Book'
-    end
+  it 'should have a person' do
+    person = Person.new('18', 'John', parent_permission: true)
+    rental = Rental.new('2018-01-01', Book.new('The Great Gatsby', 'F. Scott Fitzgerald'), person)
+    expect(rental.person).to eq(person)
   end
 
 end
