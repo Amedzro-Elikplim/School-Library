@@ -26,9 +26,7 @@ class App
   end
 
   def list_of_book
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author} "
-    end
+   load_books
   end
 
   def add_person
