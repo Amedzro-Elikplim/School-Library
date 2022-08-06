@@ -11,7 +11,7 @@ describe Book do
     end
   end
 
-   describe '#title' do
+  describe '#title' do
     it 'returns the correct title' do
       @book.title.should eql 'Title'
     end
@@ -22,5 +22,4 @@ describe Book do
       @book.author.should eql 'Author'
     end
   end
-
 end
