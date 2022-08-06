@@ -30,4 +30,14 @@ describe Person do
     person = Person.new(age, name, parent_permission)
     expect(person.of_age?).to be false
   end
+
+   it 'should check correct name' do
+    age = 12
+    name = 'amina'
+    parent_permission = true
+    person = Person.new(age, name, parent_permission)
+    expect(person.correct_name).to be name
+  end
+
+  
 end
