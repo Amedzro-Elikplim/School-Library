@@ -9,7 +9,7 @@ def Classroom do
   end
 
     describe '#new' do
-    it 'takes one parameters and returns a classroom object' do
+    it 'takes a parameters and returns a classroom object' do
       @classroom.should be_an_instance_of Classroom
     end
   end
@@ -19,5 +19,12 @@ def Classroom do
       @classroom.label.should eql 'label'
     end
   end
+
+   it 'should have an initial message' do
+    expect(@classroom).to_not be_nil
+    @classroom.students == []
+  end
+
+  
 
 end
