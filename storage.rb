@@ -54,3 +54,20 @@ def save_rentals
     File.write('rentals.json', JSON.generate(data))
   end
 end
+
+
+def load_rentals
+  if File.zero?('rentals.json')
+    puts 'No Rental'
+  else
+    print "ID of person: \t"
+    identity = gets.chomp.to_i
+    JSON.parse(File.read('rentals.json')).each do |rental|
+      if rental['id'] == identity
+        puts "[#{rental['date']}]  #{rental['bookname']} by #{rental['bookauthor']}"
+      else
+        puts 'No rental found'
+      end
+    end
+  end
+end
