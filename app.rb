@@ -26,7 +26,7 @@ class App
   end
 
   def list_of_book
-   load_books
+    load_books
   end
 
   def add_person

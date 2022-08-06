@@ -1,9 +1,1 @@
-[
-  {
-    "id": 453,
-    "date": "12/07/2022",
-    "person": "Elikplim",
-    "bookname": "Romeo and Julliet",
-    "bookauthor": "William Shakespear"
-  }
-]
+[{"class":"Student","id":816,"age":"33","name":true}]
