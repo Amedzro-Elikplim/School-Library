@@ -2,7 +2,7 @@ require './person'
 
 describe Person do
   before :each do
-    @person = Person.new 'age', 'Name', 'Parent_permission'
+    @person = Person.new 'age', 'name', 'parent_permission'
   end
 
   describe '#new' do
@@ -13,7 +13,7 @@ describe Person do
 
   describe '#name' do
     it 'returns the correct name' do
-      @person.name.should eql 'Name'
+      @person.name.should eql 'name'
     end
   end
 
@@ -21,4 +21,13 @@ describe Person do
     it 'returns the correct author' do
       @person.age.should eql 'age'
     end
+   end
+
+  it 'should check age limit' do
+    age = 12
+    name = 'amina'
+    parent_permission = true
+    person = Person.new(age, name, parent_permission)
+    expect(person.of_age?).to be false
+  end
 end
