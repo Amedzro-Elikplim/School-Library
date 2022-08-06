@@ -39,5 +39,11 @@ describe Person do
     expect(person.correct_name).to be name
   end
 
-  
+  it 'should check if you can use service' do
+    age = 12
+    name = 'amina'
+    parent_permission = true
+    person = Person.new(age, name, parent_permission)
+    expect(person.can_use_services?).to be true
+  end
 end
