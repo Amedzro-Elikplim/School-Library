@@ -12,5 +12,16 @@ def store_person
     saved_data = JSON.generate(data)
     File.write('people.json', saved_data)
    end
+end
 
+def load_people
+  if File.zero?('people.json')
+    puts 'No registered person yet, Register first!'
+  else
+    data = File.read('people.json')
+    saved_data = JSON.parse(data)
+    saved_data.each do |person|
+      puts "[#{person['class']}] Name: #{person['name']}, ID: #{person['id']}, Age: #{person['age']}"
+    end
+  end
 end
