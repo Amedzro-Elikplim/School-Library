@@ -25,3 +25,11 @@ def load_people
     end
   end
 end
+
+def store_book
+  data = []
+  @books.each do |book|
+    data << { title: book.title, author: book.author }
+    File.write('books.json', JSON.generate(data))
+  end
+end
