@@ -22,7 +22,7 @@ class App
     book = Book.new(title, author)
     puts 'Book created successfully'
     @books << book
-    store_person
+    store_book
   end
 
   def list_of_book
