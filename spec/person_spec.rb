@@ -16,4 +16,9 @@ describe Person do
       @person.name.should eql 'Name'
     end
   end
+
+  describe '#age' do
+    it 'returns the correct author' do
+      @person.age.should eql 'age'
+    end
 end
