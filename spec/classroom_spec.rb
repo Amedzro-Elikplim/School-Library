@@ -25,6 +25,9 @@ def Classroom do
     @classroom.students == []
   end
 
-  
+   it 'should be able to add student' do
+    @classroom.add_student('add new student')
+    expect(@classroom.students).to_not be nil
+  end
 
 end
