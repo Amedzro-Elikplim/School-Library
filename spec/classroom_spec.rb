@@ -14,4 +14,10 @@ def Classroom do
     end
   end
 
+   describe '#label' do
+    it 'returns the correct class' do
+      @classroom.label.should eql 'label'
+    end
+  end
+
 end
