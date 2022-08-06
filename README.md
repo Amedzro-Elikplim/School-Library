@@ -7,6 +7,7 @@
 Additional description about the project and its features.
 ## Built With
 - ruby
+- rubocop
 
 ## Getting Started
 
@@ -37,4 +38,4 @@ Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
-Give a ⭐️ if you like this project!
+Give a ⭐️ if you like this project!!
