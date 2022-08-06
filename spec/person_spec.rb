@@ -21,7 +21,7 @@ describe Person do
     it 'returns the correct author' do
       @person.age.should eql 'age'
     end
-   end
+  end
 
   it 'should check age limit' do
     age = 12
@@ -31,7 +31,7 @@ describe Person do
     expect(person.of_age?).to be false
   end
 
-   it 'should check correct name' do
+  it 'should check correct name' do
     age = 12
     name = 'amina'
     parent_permission = true

@@ -20,5 +20,4 @@ describe Rental do
     rental = Rental.new('2018-01-01', Book.new('The Great Gatsby', 'F. Scott Fitzgerald'), person)
     expect(rental.person).to eq(person)
   end
-
 end

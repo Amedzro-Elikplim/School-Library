@@ -9,5 +9,4 @@ describe Student do
       @student.should be_an_instance_of Student
     end
   end
-
-  end
+end
