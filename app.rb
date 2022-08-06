@@ -76,6 +76,7 @@ class App
     date = gets.chomp
 
     @rentals << Rental.new(date, @books[book_index], @people[people_index])
+    save_rentals
   end
 
   def list_rental
