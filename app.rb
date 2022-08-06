@@ -2,6 +2,8 @@ require_relative 'book'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
+require_relative './storage'
+require 'json'
 
 class App
   attr_reader :books, :people, :rentals
@@ -20,12 +22,11 @@ class App
     book = Book.new(title, author)
     puts 'Book created successfully'
     @books << book
+    store_book
   end
 
   def list_of_book
-    @books.each do |book|
-      puts "Title: #{book.title}, Author: #{book.author} "
-    end
+    load_books
   end
 
   def add_person
@@ -49,14 +50,12 @@ class App
       specialization = gets.chomp
       @people << Teacher.new(age, specialization, name)
     end
+    store_person
     puts "Person created successfully \n"
   end
 
   def list_people
-    @people.each do |person|
-      puts "[#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
-    end
-    puts
+    load_people
   end
 
   def rent_book
@@ -77,18 +76,10 @@ class App
     date = gets.chomp
 
     @rentals << Rental.new(date, @books[book_index], @people[people_index])
+    save_rentals
   end
 
   def list_rental
-    print 'ID of person: '
-    user_id = gets.chomp.to_i
-
-    puts "Rentals: #{user_id}"
-    @rentals.each do |rental|
-      if rental.person.id == user_id
-        puts "[#{rental.person.class}] Name: #{rental.person.name}
-      | Date: #{rental.date} | Book: \"#{rental.book.title}\" by #{rental.book.author}"
-      end
-    end
+    load_rentals
   end
 end
