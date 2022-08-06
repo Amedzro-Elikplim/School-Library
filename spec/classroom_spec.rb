@@ -2,7 +2,7 @@ require './classroom'
 require './book'
 require './student'
 
-def Classroom do
+describe Classroom do
 
   before :each do
     @classroom = Classroom.new 'label'
