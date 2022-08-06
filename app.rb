@@ -50,6 +50,7 @@ class App
       specialization = gets.chomp
       @people << Teacher.new(age, specialization, name)
     end
+    store_person
     puts "Person created successfully \n"
   end
 
